@@ -1,4 +1,3 @@
-# Write your code here
 import random
 
 run = True
@@ -28,13 +27,15 @@ if action1 == 0:
 
 elif action1 == 1:
     iin = str(400000)
-    credit_card = iin + str(random.choice(range(100000000, 999999999)))
-    pin = random.choice(range(1000, 9999))
+    credit_card = iin + str(random.choice(range(1000000000, 9999999999)))
+    pin = random.randrange(1000, 9999)
     storage.append(int(credit_card))
-    storage.append(int(pin))
+    storage.append(str(pin))
     print('Your card has been created:\n'
-          'your card number:\n', credit_card,
-          '\nYour card PIN:\n', pin)
+          'your card number:')
+    print(credit_card)
+    print('Your card PIN:')
+    print(str(pin))
     created_acct = True
 
 while created_acct and (right is False):
@@ -47,12 +48,22 @@ while created_acct and (right is False):
         print('Bye!')
         exit()
     elif action3 == 1:
-        print('WHat is happening')
+        iin = str(400000)
+        credit_card = iin + str(random.choice(range(1000000000, 9999999999)))
+        pin = random.randrange(1000, 9999)
+        storage[0] = (int(credit_card))
+        storage[1] = (str(pin))
+        print('Your card has been created:\n'
+              'your card number:')
+        print(credit_card)
+        print('Your card PIN:')
+        print(str(pin))
+        created_acct = True
     elif action3 == 2:
         print('Enter your card number\n')
         user_card_num = int(input())
         print('Enter your PIN:')
-        user_pin = int(input())
+        user_pin = str(input())
         if (user_card_num == storage[0]) and (user_pin == storage[1]):
             print('You have successfully logged in!')
             loged_in = True
